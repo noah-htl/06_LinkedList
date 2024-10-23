@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
@@ -13,7 +14,7 @@ import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
     @FXML
-    private Label welcomeText;
+    public TextField textInput;
 
     public static Scene scene;
 
@@ -21,8 +22,8 @@ public class HelloController implements Initializable {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-        linkedList.addItem("Hallo");
+        linkedList.addItem(textInput.getText());
+        textInput.setText("");
     }
 
     @FXML
